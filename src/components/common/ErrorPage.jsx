@@ -1,4 +1,4 @@
-// pages/ErrorPage.jsx
+// src/components/common/ErrorPage.jsx
 import React from "react";
 
 function ErrorPage({ code, message }) {
