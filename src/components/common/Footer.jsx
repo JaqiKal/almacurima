@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-heading text-secondary mt-8 py-6 text-sm">
+    <footer className="bg-heading text-secondary mt-2 py-2 text-sm">
       <div className="flex justify-center gap-6 mb-2">
         <Link to="/contact" className="transform hover:scale-105 hover:text-heading transition" aria-label="Contact">
           <FontAwesomeIcon icon={faEnvelope} size="lg" />

@@ -5,9 +5,9 @@ import Footer from "../components/common/Footer";
 
 function MasterLayout({ children }) {
   return (
-    <div className="bg-secondary text-heading text-secondary min-h-screen ">
+    <div className="flex flex-col min-h-screen bg-secondary text-heading ">
       <Navbar />
-      <main className="p-4 bg-amber-300">{children}</main>
+      <main className="flex-grow p-4 bg-amber-300">{children}</main>
       <Footer />
     </div>
   );
