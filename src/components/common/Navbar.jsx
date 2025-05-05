@@ -8,36 +8,37 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
-  const timerRef = useRef(null);
 
+  /**
+   * Toggles the mobile dropdown menu
+   */
   function toggleMenu() {
-    setIsOpen((prev) => {
-      if (!prev) {
-        timerRef.current = setTimeout(() => setIsOpen(false), 500);
-      } else {
-        clearTimeout(timerRef.current);
-      }
-      return !prev;
-    });
+    setIsOpen((prev) => !prev); // Toggle the menu state
   }
+
+  /**
+   * Closes the menu if clicking outside of it
+   * Only active when menu is open
+   */
   useEffect(() => {
+    if (!isOpen) return;
+
     function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
-        setIsOpen(false);
-        clearTimeout(timerRef.current);
+      const clickedOutsideMenu = menuRef.current && !menuRef.current.contains(event.target);
+      const clickedOutsideButton = buttonRef.current && !buttonRef.current.contains(event.target);
+      if (clickedOutsideMenu && clickedOutsideButton) {
+        setIsOpen(false); // Close the menu if clicked outside
       }
     }
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    document.addEventListener("mousedown", handleClickOutside); // Add event listener for clicks
+    return () => document.removeEventListener("mousedown", handleClickOutside); // Cleanup event listener on unmount
+  }, [isOpen]); // Only run this effect if the menu is open
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+  /**
+   * Tailwind class for mobile dropdown visibility
+   */
+  const mobileMenuClass = `md:hidden bg-secondary p-4 shadow-md flex justify-end ${isOpen ? "" : "hidden"}`;
 
   return (
     <nav className="w-full bg-secondary p-4 shadow-md sticky top-0 z-50">
@@ -68,32 +69,30 @@ function Navbar() {
       </div>
 
       {/* Mobile dropdown menu */}
-      {isOpen && (
-        <div ref={menuRef} className="md:hidden bg-secondary p-4 shadow-md flex justify-end">
-          <ul className="flex flex-col items-end space-y-2 text-sm font-medium">
-            <li>
-              <Link to="/" className="text-black hover:text-gray-700">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="text-black hover:text-gray-700">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="text-black hover:text-gray-700">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="text-black hover:text-gray-700">
-                Services
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+      <div ref={menuRef} className={mobileMenuClass}>
+        <ul className="flex flex-col items-end space-y-2 text-sm font-medium">
+          <li>
+            <Link to="/" className="text-black hover:text-gray-700">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-black hover:text-gray-700">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-black hover:text-gray-700">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className="text-black hover:text-gray-700">
+              Services
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
