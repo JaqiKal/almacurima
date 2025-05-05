@@ -2,14 +2,20 @@
 import React from "react";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+import { Outlet } from "react-router-dom";
 
-function MasterLayout({ children }) {
+/**
+ * MasterLayout wraps all pages with a Navbar at the top and a Footer at the bottom.
+ */
+function MasterLayout() {
   return (
-    <div className="flex flex-col min-h-screen bg-secondary text-heading ">
+    <>
       <Navbar />
-      <main className="flex-grow p-4 bg-amber-300">{children}</main>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
