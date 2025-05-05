@@ -35,7 +35,7 @@ const AppRouter = createBrowserRouter(
     },
   ],
   {
-    basename: "/almacurima", // 👈 detta fixar det!
+    basename: "/almacurima",
   }
 );
 
