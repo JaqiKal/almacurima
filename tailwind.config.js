@@ -11,7 +11,6 @@ export default {
         primary: "#ffffff",       // Background
         heading: "#0e0e0e",       // Text
         secondary: {
-          DEFAULT: "#e3e4e0", // bg-secondary
           "50": "#fcfcfc",
           "100": "#f9faf9",
           "200": "#f4f4f3",
