@@ -52,16 +52,16 @@ function Navbar() {
         {/* Desktop menu */}
         <ul className="hidden md:flex gap-6 text-sm font-medium ">
           <li>
-            <NavLinkItem to="/">Home</NavLinkItem>
+            <NavLinkItem to="/">Hem</NavLinkItem>
           </li>
           <li>
-            <NavLinkItem to="/about">About</NavLinkItem>
+            <NavLinkItem to="/about">Om oss</NavLinkItem>
           </li>
           <li>
-            <NavLinkItem to="/contact">Contact</NavLinkItem>
+            <NavLinkItem to="/contact">Kontakt</NavLinkItem>
           </li>
           <li>
-            <NavLinkItem to="/services">Services</NavLinkItem>
+            <NavLinkItem to="/services">Tjänster</NavLinkItem>
           </li>
         </ul>
 
@@ -76,22 +76,22 @@ function Navbar() {
         <ul className="flex flex-col mt-20 mr-6 space-y-6 text-lg font-medium text-right">
           <li>
             <NavLinkItem to="/" onClick={toggleMenu}>
-              Home
+              Hem
             </NavLinkItem>
           </li>
           <li>
             <NavLinkItem to="/about" onClick={toggleMenu}>
-              About
+              Om oss
             </NavLinkItem>
           </li>
           <li>
             <NavLinkItem to="/contact" onClick={toggleMenu}>
-              Contact
+              Kontakt
             </NavLinkItem>
           </li>
           <li>
             <NavLinkItem to="/services" onClick={toggleMenu}>
-              Services
+              Tjänster
             </NavLinkItem>
           </li>
         </ul>
