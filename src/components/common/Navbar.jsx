@@ -39,10 +39,10 @@ function Navbar() {
   /**
    * Tailwind class for mobile dropdown visibility
    */
-  const mobileMenuClass = `fixed top-0 right-0 h-screen w-2/5 max-w-sm z-50 bg-secondary-900 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`;
+  const mobileMenuClass = `fixed top-0 right-0 h-screen w-2/5 max-w-sm z-50 bg-secondary-500/20 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`;
 
   return (
-    <nav className="w-full bg-secondary p-4 shadow-md sticky top-0 z-50">
+    <nav className="w-full bg-secondary-500 p-4 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out hover:scale-110">
@@ -67,7 +67,7 @@ function Navbar() {
 
         {/* Hamburger menu button (mobile) */}
         <button ref={buttonRef} onClick={toggleMenu} className="md:hidden focus:outline-none" aria-label="Toggle Menu">
-          <FontAwesomeIcon icon={faBars} className="text-xl text-black" />
+          <FontAwesomeIcon icon={faBars} className="text-xl text-heading  hover:text-sky-700 transition" />
         </button>
       </div>
 

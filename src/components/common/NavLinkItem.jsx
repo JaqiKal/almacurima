@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 function NavLinkItem({ to, children, onClick }) {
   return (
-    <Link to={to} onClick={onClick} className="inline-block font-bold transform transition-transform duration-300 ease-in-out hover:scale-105 hover:text-gray-700">
+    <Link to={to} onClick={onClick} className="text-heading inline-block font-bold transform transition-transform duration-300 ease-in-out hover:scale-105 hover:text-sky-700">
       {children}
     </Link>
   );
