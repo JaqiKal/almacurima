@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import NavLinkItem from "./NavLinkItem";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,27 +39,29 @@ function Navbar() {
   /**
    * Tailwind class for mobile dropdown visibility
    */
-  const mobileMenuClass = `md:hidden bg-secondary p-4 shadow-md flex justify-end ${isOpen ? "" : "hidden"}`;
+  const mobileMenuClass = `fixed top-0 right-0 h-screen w-2/5 max-w-sm z-50 bg-secondary-900 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`;
 
   return (
     <nav className="w-full bg-secondary p-4 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-xl font-bold">AlmaCurima</div>
+        <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out hover:scale-110">
+          LOGO
+        </Link>
 
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-6 text-sm font-medium">
+        <ul className="hidden md:flex gap-6 text-sm font-medium ">
           <li>
-            <Link to="/">Home</Link>
+            <NavLinkItem to="/">Home</NavLinkItem>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLinkItem to="/about">About</NavLinkItem>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLinkItem to="/contact">Contact</NavLinkItem>
           </li>
           <li>
-            <Link to="/services">Services</Link>
+            <NavLinkItem to="/services">Services</NavLinkItem>
           </li>
         </ul>
 
@@ -70,26 +73,26 @@ function Navbar() {
 
       {/* Mobile dropdown menu */}
       <div ref={menuRef} className={mobileMenuClass}>
-        <ul className="flex flex-col items-end space-y-2 text-sm font-medium">
+        <ul className="flex flex-col mt-20 mr-6 space-y-6 text-lg font-medium text-right">
           <li>
-            <Link to="/" className="text-black hover:text-gray-700">
+            <NavLinkItem to="/" onClick={toggleMenu}>
               Home
-            </Link>
+            </NavLinkItem>
           </li>
           <li>
-            <Link to="/about" className="text-black hover:text-gray-700">
+            <NavLinkItem to="/about" onClick={toggleMenu}>
               About
-            </Link>
+            </NavLinkItem>
           </li>
           <li>
-            <Link to="/contact" className="text-black hover:text-gray-700">
+            <NavLinkItem to="/contact" onClick={toggleMenu}>
               Contact
-            </Link>
+            </NavLinkItem>
           </li>
           <li>
-            <Link to="/services" className="text-black hover:text-gray-700">
+            <NavLinkItem to="/services" onClick={toggleMenu}>
               Services
-            </Link>
+            </NavLinkItem>
           </li>
         </ul>
       </div>
