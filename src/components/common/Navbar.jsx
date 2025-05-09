@@ -66,7 +66,7 @@ function Navbar() {
         </ul>
 
         {/* Hamburger menu button (mobile) */}
-        <button ref={buttonRef} onClick={toggleMenu} className="md:hidden focus:outline-none" aria-label="Toggle Menu">
+        <button ref={buttonRef} onClick={toggleMenu} className={`md:hidden focus:outline-none ${isOpen ? "hidden" : "block"}`} aria-label="Toggle Menu">
           <FontAwesomeIcon icon={faBars} className="text-xl text-heading  hover:text-sky-700 transition" />
         </button>
       </div>
