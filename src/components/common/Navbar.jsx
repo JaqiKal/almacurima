@@ -43,10 +43,10 @@ function Navbar() {
   const mobileMenuClass = `fixed top-0 right-0 h-screen w-2/5 max-w-sm z-50 bg-secondary-500/20 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`;
 
   return (
-    <nav className="w-full bg-secondary-500 p-4 shadow-md sticky top-0 z-50">
+    <nav className="w-full bg-secondary-200 text-blue-900 p-4 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out hover:scale-110">
+        <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out  hover:text-blue-400 hover:scale-110">
           LOGO
         </Link>
 
@@ -67,15 +67,15 @@ function Navbar() {
         </ul>
 
         {/* Hamburger menu button (mobile) */}
-        <button ref={buttonRef} onClick={toggleMenu} className={`md:hidden focus:outline-none ${isOpen ? "hidden" : "block"}`} aria-label="Toggle Menu">
-          <FontAwesomeIcon icon={faBars} className="text-xl text-heading  hover:text-sky-700 transition" />
+        <button ref={buttonRef} onClick={toggleMenu} className={`md:hidden focus:outline-none transform transition-transform duration-300 ease-in-out hover:scale-110 ${isOpen ? "hidden" : "block"}`} aria-label="Toggle Menu">
+          <FontAwesomeIcon icon={faBars} className="text-xl text-blue-900 hover:text-blue-400 transition" />
         </button>
       </div>
 
       {/* Mobile dropdown menu */}
       <div ref={menuRef} className={mobileMenuClass}>
         {/* Close button inside mobile menu */}
-        <button onClick={toggleMenu} className="absolute top-4 left-4 z-50 text-heading hover:text-pink-700 focus:outline-none" aria-label="Close Menu">
+        <button onClick={toggleMenu} className="absolute top-4 left-4 z-50  text-blue-900 hover:text-pink-700 focus:outline-none" aria-label="Close Menu">
           <FontAwesomeIcon icon={faCircleXmark} className="mr-2" />
           <span className="text-xs">Stäng</span>
         </button>

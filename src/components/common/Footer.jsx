@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-secondary-500 text-heading mt-2 py-2 text-sm">
+    <footer className="bg-secondary-200 text-emerald-600 mt-2 py-2 text-sm">
       <div className="flex justify-center gap-6 mb-2">
-        <Link to="/contact" className="transform hover:scale-105 hover:text-sky-700 transition" aria-label="Contact">
+        <Link to="/contact" className="transform hover:scale-105 hover:text-blue-900 transition" aria-label="Contact">
           <FontAwesomeIcon icon={faEnvelope} size="lg" />
         </Link>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="transform hover:scale-105 hover:text-sky-700 transition" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="transform hover:scale-105 hover:text-blue-900 transition" aria-label="LinkedIn">
           <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
         </a>
       </div>{" "}
