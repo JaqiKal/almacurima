@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import NavLinkItem from "./NavLinkItem";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,6 +74,12 @@ function Navbar() {
 
       {/* Mobile dropdown menu */}
       <div ref={menuRef} className={mobileMenuClass}>
+        {/* Close button inside mobile menu */}
+        <button onClick={toggleMenu} className="absolute top-4 left-4 z-50 text-heading hover:text-pink-700 focus:outline-none" aria-label="Close Menu">
+          <FontAwesomeIcon icon={faCircleXmark} className="mr-2" />
+          <span className="text-xs">Stäng</span>
+        </button>
+
         <ul className="flex flex-col mt-20 mr-6 space-y-6 text-lg font-medium text-right">
           <li>
             <NavLinkItem to="/" onClick={toggleMenu}>
