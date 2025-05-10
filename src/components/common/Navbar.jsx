@@ -5,6 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import NavLinkItem from "./NavLinkItem";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/images/logo/logo.webp";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out  hover:text-blue-400 hover:scale-110">
-          LOGO
+          <img src={logo} alt="Almacurima logo" className="h-10 w-10 object-contain" />
         </Link>
 
         {/* Desktop menu */}
