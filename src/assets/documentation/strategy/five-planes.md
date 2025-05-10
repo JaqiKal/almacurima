@@ -109,12 +109,13 @@ All colors have been tested for WCAG AA accessibility compliance to ensure reada
 
 We use a self-hosted font stack with clear typographic hierarchy:
 
-- **Open Sans**: Primary font for all body text and most headings (H3-H6). Chosen for its legibility, neutrality, and softness.
+- **Poppins**: Primary font used for most body text and UI elements. Offers a modern, rounded, and approachable feel.
 - **Cinzel Decorative**: Used sparingly for H1/H2 to create visual identity and ceremonial elegance.
+- **Open Sans**: Acts as a fallback font for maximum readability and wide system support.
+- **sans-serif**: System-wide fallback to ensure graceful degradation.
 
 ```css
-font-family: 'Open Sans', sans-serif;
-font-family: 'Cinzel Decorative', 'Open Sans', sans-serif;
+font-family: 'Poppins', 'Open Sans', 'Cinzel Decorative', sans-serif;
 ```
 
 Fonts are loaded in `.woff2` format for performance and GDPR compliance.
