@@ -35,5 +35,6 @@ ehthumbs.db
 # Mac OS extra (om du jobbar med andra i team)
 ._*
 
-# Ignore temporary test page
+# Ignore temporary pages
+font-test.html
 src/pages/TestMenu.jsx
