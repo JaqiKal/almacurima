@@ -45,12 +45,13 @@ function Navbar() {
 
   return (
     <nav className="w-full bg-secondary-200 text-blue-900 p-4 shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out  hover:text-blue-400 hover:scale-110">
-          <img src={logo} alt="Almacurima logo" className="h-10 w-10 object-contain" />
-        </Link>
-
+      <div className="flex justify-between items-center w-full px-4 md:px-8 h-4 md:h-10">
+        <div className="flex items-center">
+          {/* Logo */}
+          <Link to="/" className="text-xl font-bold transform transition-transform duration-300 ease-in-out  hover:text-blue-400 hover:scale-110">
+            <img src={logo} alt="Almacurima logo" className="h-10 w-10 object-contain" />
+          </Link>
+        </div>
         {/* Desktop menu */}
         <ul className="hidden md:flex gap-6 text-sm font-medium ">
           <li>
